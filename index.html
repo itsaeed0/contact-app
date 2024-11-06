@@ -26,7 +26,7 @@
 
     </div>
     <div class="w-1/2 flex flex-col justify-start items-start">
-      <div>
+      <div id="add-contact" class="hidden">
         <form action="#">
           <div class="mb-4">
             <label for="image" class="block text-gray-700 font-semibold mb-2">Upload a profile picture</label>
@@ -34,15 +34,19 @@
               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
           </div>
           <div class="mb-4">
-            <input type="text" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c]"
+            <input type="text" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c] text-slate-400"
               placeholder="Name">
           </div>
           <div class="mb-4">
-            <input type="number" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c]"
+            <input type="number" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c] text-slate-400"
               placeholder="Number">
           </div>
           <div class="mb-4">
-            <input type="email" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c]"
+            <input type="email" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c] text-slate-400"
+              placeholder="Email">
+          </div>
+          <div class="mb-4">
+            <input type="submit" class="bg-slate-400 w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c] text-[#161616] font-bold cursor-pointer"
               placeholder="Email">
           </div>
         </form>
@@ -50,6 +54,10 @@
     </div>
   </div>
 
+
+
+
+ <script src="contact.js"></script>
 </body>
 
 </html>
