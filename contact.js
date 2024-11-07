@@ -43,25 +43,45 @@ form.addEventListener("submit", function(event){
     contacts.sort((a, b) => a.name.localeCompare(b.name));
 
     localStorage.setItem("contacts", JSON.stringify(contacts));
+    
+    form.reset();
+
     showUserInfo();
 });
 
 function showUserInfo() {
-    let contacts = JSON.parse(localStorage.getItem("newContact")) || [];
+    let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
 
     userInfo.innerHTML = "";
 
-    contacts.forEach(contact=> {
-        userInfo.innerHTML += `
-            <div class="flex items-center px-6 gap-10 py-3 my-8 border-b border-gray-400">
-                <img src="${contact.profilePic}" class="w-24 h-24 rounded-full mb-4 object-cover"/>
-                <span class="text-zinc-500 text-2xl">${contact.name}</span>
-                <span class="text-zinc-500 text-xl">${contact.number}</span>
-            </div>`
+    contacts.forEach((contact, index) => {
+        // ایجاد عنصر HTML برای هر مخاطب
+        const contactElement = document.createElement("div");
+        contactElement.className = "flex items-center px-6 gap-10 py-3 my-8 border-b border-gray-400 cursor-pointer";
+        contactElement.innerHTML = `
+            <img src="${contact.profilePic}" class="w-24 h-24 rounded-full mb-4 object-cover"/>
+            <span class="text-zinc-500 text-2xl">${contact.name}</span>
+            <span class="text-zinc-500 text-xl">${contact.number}</span>
+        `;
+
+        // افزودن رویداد کلیک برای ویرایش مخاطب
+        contactElement.addEventListener("click", function() {
+            // پر کردن فرم با اطلاعات مخاطب برای ویرایش
+            document.getElementById("image-user").value = contact.profilePic;
+            document.getElementById("user-name").value = contact.name;
+            document.getElementById("user-number").value = contact.number;
+            document.getElementById("user-email").value = contact.email;
+
+            // حذف مخاطب از لیست تا بعد از ویرایش بتوانیم آن را ذخیره کنیم
+            contacts.splice(index, 1);
+            localStorage.setItem("contacts", JSON.stringify(contacts));
+        });
+
+        userInfo.appendChild(contactElement);
     });
 }
 
-console.table(showUserInfo())
-window.onload = showUserInfo();
 
-localStorage.clear();
+
+window.onload = showUserInfo;
+    
