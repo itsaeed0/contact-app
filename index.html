@@ -23,26 +23,29 @@
           <i class="fa fa-user-plus" aria-hidden="true"></i>
         </button>
       </div>
+      <div id="user-info">
+        
+      </div>
 
     </div>
     <div class="w-1/2 flex flex-col justify-start items-start">
       <div id="add-contact" class="hidden">
-        <form action="#">
+        <form action="#" id="adding-form">
           <div class="mb-4">
             <label for="image" class="block text-gray-700 font-semibold mb-2">Upload a profile picture</label>
-            <input type="file" id="image" name="image-user" accept="image/*"
+            <input type="file" id="image-user" name="image" accept="image/*"
               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
           </div>
           <div class="mb-4">
-            <input type="text" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c] text-slate-400"
+            <input type="text" id="user-name" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c] text-slate-400"
               placeholder="Name">
           </div>
           <div class="mb-4">
-            <input type="number" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c] text-slate-400"
+            <input type="number" id="user-number" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c] text-slate-400"
               placeholder="Number">
           </div>
           <div class="mb-4">
-            <input type="email" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c] text-slate-400"
+            <input type="email" id="user-email" class="bg-[#41404049] w-full px-3 py-2 rounded-lg placeholder-[#4d4c4c] text-slate-400"
               placeholder="Email">
           </div>
           <div class="mb-4">
